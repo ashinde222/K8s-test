@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+      name: velpod2
+      labels:
+        env: dev
+        class: velocity
+        domain: Banking
+    
+spec:
+  containers:
+    - name: abc
+      image: 'httpd'
+      ports:
+        - containerPort: 80  

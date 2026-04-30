@@ -1,0 +1,30 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: velpod
+  labels:
+    env: qa
+    domain: healthcare
+    class: velocity
+
+
+spec:
+  containers:
+   - name: v1
+     image: 'centos:7'
+     command: ["ping", "localhost"]
+     env:
+      - name: domain
+        value: insurance
+      - name: environment
+        value: UAT  
+
+   - name: v2
+     image: 'ubuntu'
+     command: ["/bin/bash", "-c", "while true; do echo velapp; done"]
+     env:
+      - name: domain
+        value: telecom
+
+      - name: env
+        value: production  
