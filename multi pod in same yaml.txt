@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: velpod
+  labels:
+    env: qa
+
+spec:
+  containers:
+    - name: v1
+      image: centos:7
+      command: ["ping", "localhost"]
+
+  nodeSelector:
+    machine: dev-1
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: velpod2
+  labels:
+    env: dev
+
+spec:
+  containers:
+    - name: v2
+      image: ubuntu
+      command: ["sleep", "3600"]
+
+  nodeSelector:
+    machine: dev-1
+
+Multi-container pod creation in single yaml

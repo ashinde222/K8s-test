@@ -1,0 +1,27 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: velocitydep
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: qa
+
+  template:
+    metadata:
+      name: velpod
+      labels:
+        env: qa
+
+    spec:
+      containers:
+        - name: v1
+          image: "ubuntu"
+          command: ["bin/bash", "-c", "while true; do echo 'vel-app version 3'; done" ]
+~
+~
+~
+~
+deploy.yaml

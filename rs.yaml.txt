@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+
+metadata:
+  name: velocityrs
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      env: qa
+      domain: insurance
+
+  template:
+    metadata:
+      labels:
+        env: qa
+        domain: insurance
+
+    spec:
+      containers:
+        - name: v1
+          image: centos:7
+          command: ["ping", "localhost"]
+~
+~
+~
+~
+
+rs.yaml

@@ -1,0 +1,19 @@
+Kubectl basic commands
+
+minikube start  --- to start minikube cluster
+minikube status --- to check status of cluster
+minikube stop --- to stop the cluster
+minikube delete -- to delete the cluster
+minikube ip --- to check the ip of cluster
+
+
+kubectl get nodes --- to check all the nodes
+kubectl describe nodes ---- to get details of the nodes
+kubectl get nodes -o wide  ----- gives node ip 
+
+kubectl get pods --- to check all pods
+kubectl describe pods --- to get details of pod
+kubectl get pods -o wide ----- to check node and ip of pod
+kubectl apply -f pod.yaml ---- to run the manifest
+kubectl delete -f pod.yaml ---- to delete the object created by the manifest
+kubectl delete pods podname ----- to delete particular pod
