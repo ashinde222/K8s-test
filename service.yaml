@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata: 
+  name: velservice
+
+spec: 
+  ports:
+    - port: 80 # containerport exposed
+      targetPort: 80 #pod port
+      nodePort: 32000
+  selector: 
+    env: qa
+    
+ # type: ClusterIP # service type cluster Ip or Nodeport
+
+  type: NodePort
+
